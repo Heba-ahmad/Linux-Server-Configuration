@@ -87,10 +87,8 @@ Run 'do-release-upgrade' to upgrade to it.
 
 Last login: Wed Jan  9 18:58:37 2019 from 151.255.1.43
 ubuntu@ip-172-26-7-13:~$
-
   ```
 
-<!-- -->
 ## Step 4
 ### Changing the SSH port from 22 to 2200
 **on SSH Server**
