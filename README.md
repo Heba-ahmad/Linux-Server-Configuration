@@ -68,7 +68,7 @@ $ sudo apt-get upgrade
 $ sudo apt-get dist-upgrade
 ```
 - Logged back in, and now I see this message:
-  ```
+```
 Welcome to Ubuntu 16.04.5 LTS (GNU/Linux 4.4.0-1074-aws x86_64)
 
  * Documentation:  https://help.ubuntu.com
@@ -87,7 +87,7 @@ Run 'do-release-upgrade' to upgrade to it.
 
 Last login: Wed Jan  9 18:58:37 2019 from 151.255.1.43
 ubuntu@ip-172-26-7-13:~$
-  ```
+```
 
 ## Step 4
 ### Changing the SSH port from 22 to 2200
