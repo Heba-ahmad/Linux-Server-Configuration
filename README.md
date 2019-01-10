@@ -150,7 +150,7 @@ ubuntu@ip-172-26-7-13:~$
 ### Creating a new user account named grader
 Create a new user account named `grader`
 - While logged in as `ubuntu`, add user: `sudo adduser grader`.
-- Enter a password (hebaahmad) and fill out information for this new user.
+- Enter a password (1234) and fill out information for this new user.
 
 
 ## Step 7
