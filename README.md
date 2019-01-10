@@ -99,7 +99,9 @@ ubuntu@ip-172-26-7-13:~$
 **on Amazon Lightsail firewall**
 - Click on the `Manage` option of the Amazon Lightsail Instance, go to `Networking` tab, and then change the firewall configuration to match the internal firewall settings above.
   <img src="image/firewall1.png" width="500px">
+
 - Allow ports 80(TCP), 123(UDP), and 2200(TCP), and deny the default port 22.
+
   <img src="image/firwall.png" width="500px">
 
 - From your local terminal, run: `ssh -i ~/.ssh/lightsail_key.pem -p 2200 ubuntu@00.00.00.00`, where `00.00.00.00` is the public IP address of the instance.
@@ -167,6 +169,7 @@ Give `grader` the permission to sudo
 
 - Save and exit using CTRL+X and confirm with Y.
 - Verify that `grader` has sudo permissions. Run `su - grader`, enter the password, run `sudo -l` and enter the password again. The output should be like this:
+
     <img src="image/step7.png" width="500px">
 
 - install **Finger** to see the users on this server.
@@ -215,6 +218,7 @@ Create an SSH key pair for `grader` using the `ssh-keygen` tool
   sudo apt-get install apache2
   ```
 - Enter public IP of the Amazon Lightsail instance into browser. If Apache is working, you should see:
+
   <img src="image/step10.png" width="500px">
 
 - My project is built with Python 2. So, I need to install the Python2 mod_wsgi package:  
@@ -344,23 +348,23 @@ Create an SSH key pair for `grader` using the `ssh-keygen` tool
 - Rename the `application.py` file to `__init__.py` using: `mv application.py __init__.py`.
 - In `__init__.py`, change the following:
   ```
-  # engine = create_engine("sqlite:///catalog.db")
+  engine = create_engine("sqlite:///catalog.db")
   engine = create_engine('postgresql://catalog:catalogdb@localhost/catalog')
   ```
   Update path of client_secrets.json file:
-  ```
-'/var/www/catalog/catalog/client_secrets.json'
-  ```
 
+  ```
+  '/var/www/catalog/catalog/client_secrets.json'
+  ```
   and:
   ```
-  # app.run(host="0.0.0.0", port=8000, debug=True)
+  app.run(host="0.0.0.0", port=8000, debug=True)
   app.run()
   ```
 
 - In `database_setup.py`, `lotsofperfumes.py` change the following by using the command`$ sudo nano database_setup.py`, `$ sudo nano lotsofperfumes.py` :
    ```
-   # engine = create_engine("sqlite:///catalog.db")
+   engine = create_engine("sqlite:///catalog.db")
    engine = create_engine('postgresql://catalog:catalogdb@localhost/catalog')
    ```
 - Run the files by using python:
