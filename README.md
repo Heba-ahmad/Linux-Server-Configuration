@@ -362,7 +362,7 @@ Create an SSH key pair for `grader` using the `ssh-keygen` tool
   app.run()
   ```
 
-- In `database_setup.py`, `lotsofperfumes.py` change the following by using the command`$ sudo nano database_setup.py`, `$ sudo nano lotsofperfumes.py` :
+- In database_setup.py, and lotsofperfumes.py change the following by using the command`$ sudo nano database_setup.py`, `$ sudo nano lotsofperfumes.py` :
    ```
    engine = create_engine("sqlite:///catalog.db")
    engine = create_engine('postgresql://catalog:catalogdb@localhost/catalog')
@@ -374,17 +374,16 @@ Create an SSH key pair for `grader` using the `ssh-keygen` tool
     ```
 ## Step 13.2:
 ### Authenticate login through Google
-
-    - Go to [Google Cloud Plateform](https://console.cloud.google.com/).
-    - Click `APIs & services` on left menu.
-    - Click `Credentials`.
-    - Create an OAuth Client ID (under the Credentials tab), and add:
-      - http://13.58.61.97/ and
-      - http://ec2-13-58-61-97.us-east-2.compute.amazonaws.com/ as authorized JavaScript origins.
-      - Add http://ec2-13-58-61-97.us-east-2.compute.amazonaws.com/oauth2callback as authorized redirect URI.
-    - Download the corresponding JSON file, open it and copy the contents.
-    - go to catalog application file using the command `cd /var/www/catalog/catalog` edit client_secret.json using the command `$sudo nano client_secret.json` and paste the previous contents into the this file.
-    - Replace the client ID to line 25 of the `templates/login.html` file in the project directory.
+  - Go to [Google Cloud Plateform](https://console.cloud.google.com/).
+  - Click `APIs & services` on left menu.
+  - Click `Credentials`.
+  - Create an OAuth Client ID (under the Credentials tab), and add:
+    - http://13.58.61.97/ and
+    - http://ec2-13-58-61-97.us-east-2.compute.amazonaws.com/ as authorized JavaScript origins.
+    - Add http://ec2-13-58-61-97.us-east-2.compute.amazonaws.com/oauth2callback as authorized redirect URI.
+  - Download the corresponding JSON file, open it and copy the contents.
+  - go to catalog application file using the command `cd /var/www/catalog/catalog` edit client_secret.json using the command `$sudo nano client_secret.json` and paste the previous contents into the this file.
+  - Replace the client ID to line 25 of the `templates/login.html` file in the project directory.
 
 ## Step 14:
 ### Configure and Enable our virtual host to run the site
